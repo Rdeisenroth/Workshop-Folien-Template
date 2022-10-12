@@ -1,0 +1,89 @@
+\documentclass[
+    ngerman,
+    accentcolor=3b,
+    % dark_mode, % uncomment for dark mode
+    fontsize= 12pt,
+    a4paper,
+    aspectratio=169,
+    colorback=true,
+    fancy_row_colors,
+    leqno,
+    fleqn,
+    boxarc=3pt,
+    fleqn,
+    main,
+    % shell_escape = false, % Kompatibilität mit sharelatex
+]{algoslides}
+
+%%------------%%
+%%--Packages--%%
+%%------------%%
+
+% \usepackage{audutils}
+% \usepackage{fopbot}
+\usepackage{booktabs}
+
+
+%%----------------------------%%
+%%--Stilistische Anpassungen--%%
+%%----------------------------%%
+
+
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
+% Remove unwanted space from tables
+\aboverulesep = 0mm \belowrulesep = 0mm
+\renewcommand{\arraystretch}{1.4}
+
+%%---------------------------%%
+%%--Dokumenteneinstellungen--%%
+%%---------------------------%%
+
+% Workshop-Individuelle Einstellungen
+\def\workshoptitle{<Workshoptitel>}
+\def\shortworkshoptitle{<Kurztitel>}
+\subtitle{<Subtitel>}
+\def\gruesswoerte{<Begrüßende Worte>}
+\author{Ruben Deisenroth}
+\titlegraphic*{\includegraphics{example-image}}
+
+
+% Ofahrt-Einstellungen
+\graphicspath{{pictures}}
+\title[\shortworkshoptitle{}]{\workshoptitle{} -- Ofahrt 2022}
+\department{TU Darmstadt | Fachbereich Informatik | Ofahrt 2022 | \insertshorttitle{}}
+\date{\today}
+\logo*{\includegraphics{example-image-16x9}} % TODO: Ofahrt-Logo erstellen
+
+%%-------------------------%%
+%%--Beginn des Dokumentes--%%
+%%-------------------------%%
+
+\begin{document}
+
+    %%-----------%%
+    %%--Titelei--%%
+    %%-----------%%
+
+    \maketitle{}
+
+    \begin{frame}[c]
+        % Die Begrüßenden Worte können individuell pro Workshop festgelegt werden. Am Besten nur was kurzes, sowie "Gude", "Hi", "Herzlich Willkommen!", ...
+        \centering\huge\textbf{\gruesswoerte{}}
+    \end{frame}
+
+    %%---------------------------%%
+    %%--Beginn der Präsentation--%%
+    %%---------------------------%%
+
+    \begin{frame}
+        \frametitle{Das steht heute auf dem Plan}
+        \tableofcontents[subsubsectionstyle=hide]
+    \end{frame}
+
+
+    %%-----------%%
+    %%--Kapitel--%%
+    %%-----------%%
+
+    \input{chapters/chapter01}
+\end{document}
