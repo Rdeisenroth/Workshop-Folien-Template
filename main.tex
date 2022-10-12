@@ -22,6 +22,7 @@
 % \usepackage{audutils}
 % \usepackage{fopbot}
 \usepackage{booktabs}
+\usepackage{etoolbox}
 
 
 %%----------------------------%%
@@ -43,16 +44,27 @@
 \def\shortworkshoptitle{<Kurztitel>}
 \subtitle{<Subtitel>}
 \def\gruesswoerte{<Begrüßende Worte>}
-\author{Ruben Deisenroth}
+\author{<Autor1>\and<Autor2>}
 \titlegraphic*{\includegraphics{example-image}}
 
 
-% Ofahrt-Einstellungen
+% Ophase-Einstellungen
+\ExplSyntaxOn
+\def\summerophasename{Sommerophase}
+\def\winterophasename{Winterophase}
+\DeclareDocumentCommand{\ophase}{}{
+    \int_compare:nTF {\the\month > 4}{
+        \winterophasename\space{}\the\year-\the\numexpr\year+1\relax
+    }{
+        \summerophasename\space{}\the\year
+    }
+}
+\ExplSyntaxOff
 \graphicspath{{pictures}}
-\title[\shortworkshoptitle{}]{\workshoptitle{} -- Ofahrt 2022}
-\department{TU Darmstadt | Fachbereich Informatik | Ofahrt 2022 | \insertshorttitle{}}
+\title[\shortworkshoptitle{}]{\workshoptitle{}}
+\department{TU Darmstadt | Fachbereich Informatik | \ophase{} | \insertshorttitle{}}
 \date{\today}
-\logo*{\includegraphics{example-image-16x9}} % TODO: Ofahrt-Logo erstellen
+\logo*{\includegraphics{d120-logo.png}}
 
 %%-------------------------%%
 %%--Beginn des Dokumentes--%%
