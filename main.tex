@@ -1,3 +1,4 @@
+% !TeX root = main.tex
 \documentclass[
     ngerman,
     accentcolor=3b,
@@ -12,59 +13,16 @@
     boxarc=3pt,
     fleqn,
     main,
+    design=2008,
     % shell_escape = false, % Kompatibilität mit sharelatex
 ]{algoslides}
+\RequirePackage{import}
+\subimport{common}{preamble}
 
-%%------------%%
-%%--Packages--%%
-%%------------%%
-
-% \usepackage{audutils}
-% \usepackage{fopbot}
-\usepackage{booktabs}
-\usepackage{etoolbox}
-
-
-%%----------------------------%%
-%%--Stilistische Anpassungen--%%
-%%----------------------------%%
-
-
-\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
-% Remove unwanted space from tables
-\aboverulesep = 0mm \belowrulesep = 0mm
-\renewcommand{\arraystretch}{1.4}
-
-%%---------------------------%%
-%%--Dokumenteneinstellungen--%%
-%%---------------------------%%
-
-% Workshop-Individuelle Einstellungen
-\def\workshoptitle{<Workshoptitel>}
-\def\shortworkshoptitle{<Kurztitel>}
-\subtitle{<Subtitel>}
-\def\gruesswoerte{<Begrüßende Worte>}
-\author{<Autor1>\and<Autor2>}
-\titlegraphic*{\includegraphics{example-image}}
-
-
-% Ophase-Einstellungen
-\ExplSyntaxOn
-\def\summerophasename{Sommerophase}
-\def\winterophasename{Winterophase}
-\DeclareDocumentCommand{\ophase}{}{
-    \int_compare:nTF {\the\month > 4}{
-        \winterophasename\space{}\the\year-\the\numexpr\year+1\relax
-    }{
-        \summerophasename\space{}\the\year
-    }
-}
-\ExplSyntaxOff
 \graphicspath{{pictures}}
 \title[\shortworkshoptitle{}]{\workshoptitle{}}
 \department{TU Darmstadt | Fachbereich Informatik | \ophase{} | \insertshorttitle{}}
 \date{\today}
-\logo*{\includegraphics{d120-logo.png}}
 
 %%-------------------------%%
 %%--Beginn des Dokumentes--%%
@@ -98,4 +56,12 @@
     %%-----------%%
 
     \input{chapters/chapter01}
+
+    \section{Verabschiedung}
+    \begin{frame}[c]
+        \frametitle{Verabschiedung}
+        \centering
+        \huge\textbf{Vielen Dank für Eure Aufmerksamkeit!}
+    \end{frame}
+
 \end{document}

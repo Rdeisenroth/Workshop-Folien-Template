@@ -1,0 +1,29 @@
+name: "I found a Mistake"
+description: "Report an issue or mistake in the workshop slides or exercise"
+labels: ["bug", "mistake"]
+body:
+  - type: dropdown
+    id: context
+    attributes:
+      label: "What is the context?"
+      options:
+        - "slides"
+        - "exercise"
+        - "other"
+      description: "Select the context where you found the mistake"
+  - type: input
+    id: other_context
+    attributes:
+      label: "Custom Context"
+      description: "If you selected 'other', please describe the context"
+      placeholder: "Describe the context"
+    validations:
+      required: false
+  - type: textarea
+    id: mistake_description
+    attributes:
+      label: "Describe the mistake"
+      description: "Provide a detailed explanation of the mistake you found"
+      placeholder: "Please describe the issue you found here"
+    validations:
+      required: true

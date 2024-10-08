@@ -1,0 +1,29 @@
+name: "Ask Question"
+description: "Ask for clarification or more explanation on a topic"
+labels: ["enhancement", "question"]
+body:
+  - type: dropdown
+    id: context
+    attributes:
+      label: "What is the context?"
+      options:
+        - "slides"
+        - "exercise"
+        - "other"
+      description: "Select the context for your request"
+  - type: input
+    id: other_context
+    attributes:
+      label: "Custom Context"
+      description: "If you selected 'other', please describe the context"
+      placeholder: "Describe the context"
+    validations:
+      required: false
+  - type: textarea
+    id: explanation_topic
+    attributes:
+      label: "What needs better explanation?"
+      description: "Provide the topic or area where more explanation is needed"
+      placeholder: "Specify what you want explained better"
+    validations:
+      required: true

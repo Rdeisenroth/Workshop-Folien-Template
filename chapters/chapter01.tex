@@ -1,7 +1,8 @@
+% !TeX root = chapter01.tex
 \documentclass[
     ngerman,
     accentcolor=3b,
-    dark_mode,
+    % dark_mode, % uncomment for dark mode
     fontsize= 12pt,
     a4paper,
     aspectratio=169,
@@ -11,19 +12,12 @@
     fleqn,
     boxarc=3pt,
     fleqn,
+    main,
+    design=2008,
     % shell_escape = false, % Kompatibilität mit sharelatex
 ]{algoslides}
-
-%%------------%%
-%%--Packages--%%
-%%------------%%
-
-% \usepackage{audutils}
-% \usepackage{fopbot}
-\usepackage{booktabs}
-
-% Import all Packages from Main Preamble with relative Path (buggy, list packages instead)
-% \subimport*{../../}{preamble}
+\RequirePackage{import}
+\subimport{../common}{preamble}
 
 %%--------------------------%%
 %%--Imports from Main File--%%
@@ -36,7 +30,19 @@
 
 \begin{document}
     \section{Einführung}\label{1}\label{Einfuehrung}
+    \subsection{Subsection1}
+    \begin{frame}[<+(1)->]
+        \slidehead{}
+        \begin{itemize}
+            \item Item 1
+            \item Item 2
+            \item Item 3
+        \end{itemize}
+    \end{frame}
+
+    \subsection{Subsection2}
     \begin{frame}
         \slidehead{}
+        More text
     \end{frame}
 \end{document}

@@ -1,0 +1,28 @@
+%%----------%%
+%%--Makros--%%
+%%----------%%
+
+% Ophasen-Stuff
+\ExplSyntaxOn
+\def\summerOrWinter{Winter}
+\bool_if:nT {\int_compare_p:n {\the\month > 4} && \int_compare_p:n {\the\month < 10}}{
+    \def\summerOrWinter{Sommer}
+}
+\def\ophase{\summerOrWinter{}ophase}
+\ExplSyntaxOff
+\title[\shortworkshoptitle{}]{\workshoptitle{}}
+\department{TU Darmstadt | FB20 | \ophase{}\space{}\the\year{} | \insertshorttitle{}-Workshop}
+\date{\today}
+
+\DeclareDocumentCommand{\urlslide}{om}{
+    \begin{frame}[c]
+        \slidehead{}
+        \begin{figure}
+            \centering
+            \qrcode[height=3cm]{#2}
+            \caption{\IfNoValueF{#1}{#1\\}\url{#2}}
+        \end{figure}
+    \end{frame}
+}
+
+\let\theHtable\thetable

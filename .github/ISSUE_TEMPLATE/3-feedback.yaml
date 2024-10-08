@@ -1,0 +1,29 @@
+name: "General Feedback"
+description: "Provide feedback on a specific topic in the slides or exercise"
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: context
+    attributes:
+      label: "What is the context?"
+      options:
+        - "slides"
+        - "exercise"
+        - "other"
+      description: "Select the context for your feedback"
+  - type: input
+    id: other_context
+    attributes:
+      label: "Custom Context"
+      description: "If you selected 'other', please describe the context"
+      placeholder: "Describe the context"
+    validations:
+      required: false
+  - type: textarea
+    id: feedback
+    attributes:
+      label: "Your Feedback"
+      description: "Describe your feedback on the topic"
+      placeholder: "Write your feedback here"
+    validations:
+      required: true

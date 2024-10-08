@@ -1,0 +1,33 @@
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
+
+% Remove unwanted space from tables
+\aboverulesep = 0mm \belowrulesep = 0mm
+\renewcommand{\arraystretch}{1.4}
+
+% Center Captions
+\captionsetup[figure]{justification=centering}
+\captionsetup[subfigure]{justification=centering}
+\captionsetup[table]{justification=centering}
+
+% We want a tocslide after every \section and \subsection
+\AtBeginSection{%
+    \begin{frame}[c]
+        \frametitle{Das steht heute auf dem Plan}
+        \tableofcontents[currentsection, hideothersubsections]
+    \end{frame}
+}
+
+\AtBeginSubsection{%
+    \begin{frame}[c]
+        \frametitle{Das steht heute auf dem Plan}
+        \tableofcontents[
+            currentsection,
+            currentsubsection,
+            subsectionstyle=show/shaded/hide,
+            % hide subsubsection
+            subsubsectionstyle=hide,
+        ]
+    \end{frame}
+}
+
+\logo*{\includegraphics{d120-logo\IfDarkModeT{-dark}.pdf}}

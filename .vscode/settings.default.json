@@ -1,5 +1,5 @@
 {
-    "latex-workshop.latexindent.args": [
+    "latex-workshop.formatting.latexindent.args": [
         "-c",
         "%DIR%/",
         "%TMPFILE%",
@@ -20,5 +20,14 @@
         "*.toc": "latex",
         "*.pygstyle": "latex",
         "*.pygtex": "latex"
-    }
+    },
+    "grammarly.selectors": [
+        {
+            "language": "latex",
+            "scheme": "file"
+        }
+    ],
+    "latex-workshop.bibtex-format.tab": "4 spaces",
+    "ltex.language": "de-DE",
+    "files.insertFinalNewline": true
 }
